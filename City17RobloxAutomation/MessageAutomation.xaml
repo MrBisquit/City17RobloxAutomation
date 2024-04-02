@@ -30,7 +30,8 @@
                     <ComboBox Name="Verdict"></ComboBox>
                 </StackPanel>
 
-                <Button Margin="5">Generate</Button>
+                <Button Margin="5" Padding="2" Name="Generate" Click="Generate_Click">Generate</Button>
+                <Button Margin="5" Padding="2" Name="Reset" Click="Reset_Click">Reset</Button>
             </StackPanel>
         </Grid>
         <Grid Name="ST"></Grid>

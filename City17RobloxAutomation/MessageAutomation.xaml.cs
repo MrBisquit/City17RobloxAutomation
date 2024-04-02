@@ -71,6 +71,7 @@ namespace City17RobloxAutomation
 
         private void LoadVerdicts()
         {
+            if(Regulation.SelectedIndex <= -1) return;
             string selectedRegulationCode = (Regulation.Items[Regulation.SelectedIndex] as ComboBoxItem).Name.Replace("_", ".").Replace("I", "");
 
             Verdict.Items.Clear();
@@ -132,6 +133,137 @@ namespace City17RobloxAutomation
         private void Regulation_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LoadVerdicts();
+        }
+
+        private void Generate_Click(object sender, RoutedEventArgs e)
+        {
+            SO.Visibility = Visibility.Collapsed;
+            ST.Visibility = Visibility.Visible;
+
+            GenerateMessages();
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            Category.SelectedIndex = 1;
+            Regulation.SelectedIndex = 0;
+            Verdict.SelectedIndex = 0;
+
+            ST.Visibility = Visibility.Collapsed;
+            SO.Visibility = Visibility.Visible;
+        }
+
+        private void GenerateMessages()
+        {
+            // Civilian, prepare to receive civil judgement
+
+            List<string> messages = new List<string>();
+
+            if (Regulation.SelectedIndex <= -1) return;
+            string selectedRegulationCode = (Regulation.Items[Regulation.SelectedIndex] as ComboBoxItem).Name.Replace("_", ".").Replace("I", "");
+            if(Verdict.SelectedIndex <= -1) return;
+            string selectedVerdictCode = (Verdict.Items[Verdict.SelectedIndex] as ComboBoxItem).Name.Replace("_", ".").Replace("V", "");
+
+            Verdict.Items.Clear();
+
+            if (Category.SelectedIndex == 0)
+            {
+                Regulation selectedRegulation = null;
+                Verdict selectedVerdict = null;
+
+                foreach (var regulation in CombineRegulations)
+                {
+                    if (regulation.Code == selectedRegulationCode)
+                    {
+                        selectedRegulation = regulation;
+
+                        foreach(var verdict in regulation.Verdicts)
+                        {
+                            if(verdict.Level.ToString() == selectedVerdictCode)
+                            {
+                                selectedVerdict = verdict;
+                            }
+                        }
+                    }
+                }
+
+                // Some messages here
+            }
+            else if (Category.SelectedIndex == 1)
+            {
+                Regulation selectedRegulation = null;
+                Verdict selectedVerdict = null;
+
+                foreach (var regulation in CivilianRegulations)
+                {
+                    if (regulation.Code == selectedRegulationCode)
+                    {
+                        selectedRegulation = regulation;
+
+                        foreach (var verdict in regulation.Verdicts)
+                        {
+                            if (verdict.Level.ToString() == selectedVerdictCode)
+                            {
+                                selectedVerdict = verdict;
+                            }
+                        }
+                    }
+                }
+
+                messages.Add($"Suspect, you are being charged with {selectedRegulation.Code} ({selectedRegulation.Name.ToLowerInvariant()})");
+                if (selectedVerdict != null)
+                {
+                    messages.Add($"You are receiving {selectedVerdict.Name.ToLowerInvariant()}");
+
+                    if (selectedVerdict.Name == "CAPITAL PROSECUTION")
+                    {
+                        messages.Add("Suspect, prepare to receive civil judgement");
+                    }
+                }
+            }
+
+            ScrollViewer scrollViewer = new ScrollViewer();
+            StackPanel stackPanel = new StackPanel();
+            scrollViewer.Content = stackPanel;
+
+            ST.Children.Add(scrollViewer);
+
+            TextBlock textBlock = new TextBlock()
+            {
+                Text = "Click to copy, press Ctrl + V to paste",
+                Margin = new Thickness(10)
+            };
+
+            stackPanel.Children.Add(textBlock);
+
+            foreach (var message in messages)
+            {
+                TextBox textBox = new TextBox()
+                {
+                    Text = message,
+                    Margin = new Thickness(10),
+                    TextWrapping = TextWrapping.Wrap,
+                    Padding = new Thickness(5),
+                    IsReadOnly = true
+                };
+
+                textBox.MouseLeftButtonUp += (object? sender, MouseButtonEventArgs args) =>
+                {
+                    Clipboard.SetText(message);
+                };
+
+                stackPanel.Children.Add(textBox);
+            }
+
+            Button resetButton = new Button()
+            {
+                Content = "Reset",
+                Margin = new Thickness(10),
+                Padding = new Thickness(2),
+            };
+
+            resetButton.Click += Reset_Click;
+            stackPanel.Children.Add(resetButton);
         }
     }
 }
