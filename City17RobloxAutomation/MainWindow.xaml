@@ -1,0 +1,32 @@
+﻿<Window x:Class="City17RobloxAutomation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:City17RobloxAutomation"
+        mc:Ignorable="d"
+        Title="City-17 (Roblox game) Automation"
+        Height="900"
+        Width="1600"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TabControl>
+            <TabItem Header="Combine regulations">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <TabPanel Name="CombineRegulationsTI"></TabPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="Civilian regulations" IsSelected="True">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <TabPanel></TabPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
