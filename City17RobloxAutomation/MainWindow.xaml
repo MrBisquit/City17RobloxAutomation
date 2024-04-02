@@ -28,5 +28,7 @@
                 </ScrollViewer>
             </TabItem>
         </TabControl>
+
+        <Frame Grid.Column="1" Name="AutomationFrame"></Frame>
     </Grid>
 </Window>

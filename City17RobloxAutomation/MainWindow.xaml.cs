@@ -29,6 +29,10 @@ namespace City17RobloxAutomation
         {
             LoadCombineRegulations();
             LoadCivilianRegulations();
+
+            MessageAutomation messageAutomation = new MessageAutomation();
+            AutomationFrame.Content = messageAutomation.Content;
+            messageAutomation.LoadRegulations();
         }
 
         private void LoadCombineRegulations()
