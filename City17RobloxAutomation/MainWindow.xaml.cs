@@ -23,10 +23,12 @@ namespace City17RobloxAutomation
         }
 
         public Regulation[] CombineRegulations = Defaults.CombineRegulations;
+        public Regulation[] CivilianRegulations = Defaults.CivilianRegulations;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LoadCombineRegulations();
+            LoadCivilianRegulations();
         }
 
         private void LoadCombineRegulations()
@@ -53,7 +55,7 @@ namespace City17RobloxAutomation
                     levels[regulation.Level] = items;
                     wrapPanel.Children.Add(levels[regulation.Level]);
 
-                    levelsVerdicts.Add(regulation.Level, regulation.Verdicts);
+                    levelsVerdicts.Add(regulation.Level, regulation.Verdicts.ToArray());
                 }
 
                 StackPanel item = new StackPanel()
@@ -63,7 +65,9 @@ namespace City17RobloxAutomation
                 TextBlock title = new TextBlock()
                 {
                     Text = $"[{regulation.Code}] {regulation.Name}",
-                    FontSize = 15
+                    TextWrapping = TextWrapping.Wrap,
+                    FontSize = 15,
+                    FontWeight = FontWeights.SemiBold
                 };
 
                 TextBlock description = new TextBlock()
@@ -79,7 +83,7 @@ namespace City17RobloxAutomation
                 levels[regulation.Level].Children.Add(item);
             }
 
-            foreach (var item in levels)
+            foreach (var item in levelsVerdicts)
             {
                 StackPanel verdicts = new StackPanel();
 
@@ -89,11 +93,106 @@ namespace City17RobloxAutomation
                     FontSize = 20
                 };
 
-                Verdict[] verdictList = levelsVerdicts[item.Key];
+                verdicts.Children.Add(title);
 
-                foreach (var verdict in verdictList)
+                if (levelsVerdicts.ContainsKey(item.Key))
                 {
-                    
+                    Verdict[] verdictList = levelsVerdicts[item.Key];
+
+                    foreach (var verdict in verdictList)
+                    {
+                        TextBlock verdictText = new TextBlock()
+                        {
+                            Text = $"{verdict.Level}. {verdict.Name}"
+                        };
+
+                        verdicts.Children.Add(verdictText);
+                    }
+
+                    levels[item.Key].Children.Add(verdicts);
+                }
+            }
+        }
+
+        private void LoadCivilianRegulations()
+        {
+            Dictionary<int, StackPanel> levels = new Dictionary<int, StackPanel>();
+            Dictionary<int, Verdict[]> levelsVerdicts = new Dictionary<int, Verdict[]>();
+            WrapPanel wrapPanel = new WrapPanel();
+
+            CivilianRegulationsTI.Children.Add(wrapPanel);
+
+            foreach (var regulation in CivilianRegulations)
+            {
+                if (!levels.ContainsKey(regulation.Level))
+                {
+                    StackPanel items = new StackPanel();
+                    items.Margin = new Thickness(5);
+                    items.Width = 350;
+                    TextBlock iTitle = new TextBlock()
+                    {
+                        Text = $"Level {regulation.Level} Regulations",
+                        FontSize = 20
+                    };
+                    items.Children.Add(iTitle);
+                    levels[regulation.Level] = items;
+                    wrapPanel.Children.Add(levels[regulation.Level]);
+
+                    levelsVerdicts.Add(regulation.Level, regulation.Verdicts.ToArray());
+                }
+
+                StackPanel item = new StackPanel()
+                {
+                    Margin = new Thickness(0, 10, 0, 10)
+                };
+                TextBlock title = new TextBlock()
+                {
+                    Text = $"[{regulation.Code}] {regulation.Name}",
+                    TextWrapping = TextWrapping.Wrap,
+                    FontSize = 15,
+                    FontWeight = FontWeights.SemiBold
+                };
+
+                TextBlock description = new TextBlock()
+                {
+                    Text = regulation.Description,
+                    TextWrapping = TextWrapping.Wrap,
+                    Width = 300,
+                };
+
+                item.Children.Add(title);
+                item.Children.Add(description);
+
+                levels[regulation.Level].Children.Add(item);
+            }
+
+            foreach (var item in levelsVerdicts)
+            {
+                StackPanel verdicts = new StackPanel();
+
+                TextBlock title = new TextBlock()
+                {
+                    Text = "Verdicts",
+                    FontSize = 20
+                };
+
+                verdicts.Children.Add(title);
+
+                if (levelsVerdicts.ContainsKey(item.Key))
+                {
+                    Verdict[] verdictList = levelsVerdicts[item.Key];
+
+                    foreach (var verdict in verdictList)
+                    {
+                        TextBlock verdictText = new TextBlock()
+                        {
+                            Text = $"{verdict.Level}. {verdict.Name}"
+                        };
+
+                        verdicts.Children.Add(verdictText);
+                    }
+
+                    levels[item.Key].Children.Add(verdicts);
                 }
             }
         }

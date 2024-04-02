@@ -24,7 +24,7 @@
 
             <TabItem Header="Civilian regulations" IsSelected="True">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <TabPanel></TabPanel>
+                    <TabPanel Name="CivilianRegulationsTI"></TabPanel>
                 </ScrollViewer>
             </TabItem>
         </TabControl>
