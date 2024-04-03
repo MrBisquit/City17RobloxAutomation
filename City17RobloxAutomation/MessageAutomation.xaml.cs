@@ -226,6 +226,7 @@ namespace City17RobloxAutomation
             StackPanel stackPanel = new StackPanel();
             scrollViewer.Content = stackPanel;
 
+            ST.Children.Clear();
             ST.Children.Add(scrollViewer);
 
             TextBlock textBlock = new TextBlock()
