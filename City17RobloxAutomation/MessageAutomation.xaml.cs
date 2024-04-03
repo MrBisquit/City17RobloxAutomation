@@ -241,18 +241,36 @@ namespace City17RobloxAutomation
                 TextBox textBox = new TextBox()
                 {
                     Text = message,
-                    Margin = new Thickness(10),
+                    Margin = new Thickness(10, 10, 10, 1),
                     TextWrapping = TextWrapping.Wrap,
                     Padding = new Thickness(5),
                     IsReadOnly = true
                 };
 
-                textBox.MouseLeftButtonUp += (object? sender, MouseButtonEventArgs args) =>
+                textBox.MouseLeftButtonDown += (object? sender, MouseButtonEventArgs args) =>
+                {
+                    //Clipboard.SetText(message);
+                };
+
+                textBlock.MouseUp += (object? sender, MouseButtonEventArgs args) =>
+                {
+                    //Clipboard.SetText(message);
+                };
+
+                Button copyButton = new Button()
+                {
+                    Content = "Copy message",
+                    Padding = new Thickness(2),
+                    Margin = new Thickness(10, 1, 10, 5)
+                };
+
+                copyButton.Click += (object sender, RoutedEventArgs args) =>
                 {
                     Clipboard.SetText(message);
                 };
 
                 stackPanel.Children.Add(textBox);
+                stackPanel.Children.Add(copyButton);
             }
 
             Button resetButton = new Button()
