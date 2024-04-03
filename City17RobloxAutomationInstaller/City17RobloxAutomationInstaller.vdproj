@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -146,15 +162,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:City-17 Roblox Automation"
-        "ProductCode" = "8:{09DE4F72-0BE5-4961-A333-2D298965ADEA}"
-        "PackageCode" = "8:{98AEB172-6BD2-433E-A8FA-42A7497F0087}"
+        "ProductCode" = "8:{09A91A40-1B41-42B0-8A20-99BA0F52B7A5}"
+        "PackageCode" = "8:{909887D0-8B7A-4FB0-B815-95C69065C8B8}"
         "UpgradeCode" = "8:{61679B18-CE81-4684-B919-F0773F96BF5A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:WTDawson"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
