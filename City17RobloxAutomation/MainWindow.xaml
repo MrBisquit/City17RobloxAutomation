@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:City17RobloxAutomation"
         mc:Ignorable="d"
-        Title="City-17 (Roblox game) Automation"
+        Title="City-17 (Roblox game) Automation - Updated to latest regulations (31/08/2024) - Made by WTDawson9 (MrBisquit) - Not affiliated with the actual game"
         Height="900"
         Width="1600"
         Loaded="Window_Loaded">

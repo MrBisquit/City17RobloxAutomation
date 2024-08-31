@@ -1,4 +1,8 @@
 ﻿using City17RobloxAutomation.Types;
+using Octokit;
+using System.Diagnostics;
+using System.Reflection;
+using System.Security.Policy;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,7 +29,7 @@ namespace City17RobloxAutomation
         public Regulation[] CombineRegulations = Defaults.CombineRegulations;
         public Regulation[] CivilianRegulations = Defaults.CivilianRegulations;
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LoadCombineRegulations();
             LoadCivilianRegulations();
@@ -33,6 +37,35 @@ namespace City17RobloxAutomation
             MessageAutomation messageAutomation = new MessageAutomation();
             AutomationFrame.Content = messageAutomation.Content;
             messageAutomation.LoadRegulations();
+
+            // Checking to see if it is the latest version or not
+
+            string owner = "MrBisquit";
+            string repo = "City17RobloxAutomation";
+            var currentVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            currentVersion = currentVersion.Substring(0, currentVersion.Length - 2);
+
+            var client = new GitHubClient(new ProductHeaderValue("City17RobloxAutomationUpdateTester"));
+
+            var latestRelease = await client.Repository.Release.GetLatest(owner, repo);
+            var latestVersion = latestRelease.ToUpdate().TagName;
+
+            if (latestVersion == currentVersion)
+            {
+                Console.WriteLine("Up to date.");
+            }
+            else
+            {
+                Console.WriteLine($"A new version is available: {latestVersion}. You are on version {currentVersion}.");
+                MessageBoxResult result = MessageBox.Show("There is a newer version of City17RobloxAutomation available, would you like to open the link to the download page?\n\n" +
+                    $"Latest version: {latestVersion} Current version: {currentVersion}", "Newer version available", MessageBoxButton.YesNo);
+                if(result == MessageBoxResult.Yes)
+                {
+                    string url = "https://github.com/MrBisquit/City17RobloxAutomation/releases/latest/";
+                    url = url.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+                }
+            }
         }
 
         private void LoadCombineRegulations()

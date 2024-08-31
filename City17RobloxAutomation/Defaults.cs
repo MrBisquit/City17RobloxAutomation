@@ -15,17 +15,17 @@ namespace City17RobloxAutomation
             new Verdict()
             {
                 Level = 1,
-                Name = "FIRST WARNING"
+                Name = "VERBAL WARNING"
             },
             new Verdict()
             {
                 Level = 2,
-                Name = "SECOND WARNING + ARREST"
+                Name = "ARREST/ADMINISTRATIVE WARNING"
             },
             new Verdict()
             {
                 Level = 3,
-                Name = "FINAL WARNING + 24 HOUR PROHIBITION"
+                Name = "48 HOUR PROHIBITATION"
             },
             new Verdict()
             {
@@ -39,17 +39,17 @@ namespace City17RobloxAutomation
             new Verdict()
             {
                 Level = 1,
-                Name = "FIRST WARNING + ARREST"
+                Name = "FIRST WARNING/ADMINSTRATIVE WARNING"
             },
             new Verdict()
             {
                 Level = 2,
-                Name = "SECOND WARNING + KICK"
+                Name = "SECOND ARREST/KICK"
             },
             new Verdict()
             {
                 Level = 3,
-                Name = "FINAL WARNING + 48 HOUR PROHIBITION"
+                Name = "72 HOUR PROHIBITION"
             },
             new Verdict()
             {
@@ -63,7 +63,7 @@ namespace City17RobloxAutomation
             new Verdict()
             {
                 Level = 1,
-                Name = "FIRST WARNING + ARREST"
+                Name = "ARREST/ADMINISTRATIVE WARNING"
             },
             new Verdict()
             {
@@ -85,7 +85,7 @@ namespace City17RobloxAutomation
                 Level = 1,
                 Code = "1.1",
                 Name = "NEGLIGENCE OF STANDARD PROCEDURE",
-                Description = "NEGLECTING ANY OUTSTANDING STANDARD PROCEDURE OR REGULATION DETAILED IN DOCUMENTS PUBLISHED BY AFFILIATES ON BEHALF OF THE UNIVERSAL UNION IS PROHIBITED",
+                Description = "NEGLECTING ANY OUTSTANDING STANDARD PROCEDURE OR REGULATION DETAILED IN DOCUMENTS PUBLISHED BY AFFILIATES ON BEHALF OF THE UNIVERSAL UNION IS PROHIBITED.",
                 Verdicts = CombineRegulationSL1V
             },
             new Regulation()
@@ -93,7 +93,7 @@ namespace City17RobloxAutomation
                 Level = 1,
                 Code = "1.2",
                 Name = "UNPROFESSIONAL MANNERISM",
-                Description = "NEGLECTING REGULATION & BEHAVIOR ETIQUETTE IS PROHIBITED",
+                Description = "NEGLECTING REGULATION & BEHAVIOR ETIQUETTE IS PROHIBITED.",
                 Verdicts = CombineRegulationSL1V
             },
             new Regulation()
@@ -101,13 +101,20 @@ namespace City17RobloxAutomation
                 Level = 1,
                 Code = "1.3",
                 Name = "UNNECESSARY CONVERSATION",
-                Description = "ENGAGING IN CONVERSATION WITH CITIZENS IS PROHIBITED",
+                Description = "ENGAGING IN CONVERSATION WITH CITIZENS OR OTHER COMBINE UNITS OUTSIDE OF ROLEPLAYING CIRCUMSTANCES IS PROHIBITED.",
                 Verdicts = CombineRegulationSL1V
             },
             new Regulation()
             {
                 Level = 1,
                 Code = "1.4",
+                Name = "APPARATUS MISHANDLING",
+                Description = "MISUSING ANY INVENTORY TOOK OR PHYISCAL OBJECTS, SUCH AS THE RADIO, FIREARMS, PROPS, AND DOORS."
+            },
+            new Regulation()
+            {
+                Level = 1,
+                Code = "1.5",
                 Name = "WILFUL DISOBEDIENCE",
                 Description = "ENGAGING IN DISOBEDIENCE WITH RANK MEMBERS OF COMMAND, HIGH COMMAND, AND OVERSIGHT ECHELONS IS PROHIBITED",
                 Verdicts = CombineRegulationSL1V
@@ -115,7 +122,7 @@ namespace City17RobloxAutomation
             new Regulation()
             {
                 Level = 1,
-                Code = "1.5",
+                Code = "1.6",
                 Name = "VIOLATION ENCOURAGEMENT",
                 Description = "ENCOURAGING OR PROVOKING OTHERS TO COMMIT A VIOLATION IS PROHIBITED",
                 Verdicts = CombineRegulationSL1V
@@ -133,24 +140,16 @@ namespace City17RobloxAutomation
             {
                 Level = 2,
                 Code = "2.2",
-                Name = "CRIMINAL TRESPASS",
-                Description = "ACCESSING ANY REGION DECLARED TO BE RESTRICTED AT OWN RANK IS PROHIBITED",
+                Name = "ANTI UNIVERSAL UNION RHETORIC",
+                Description = "UNDERMINING THE UNIVERSAL UNION, DEFYING THE UNIVERSAL UNION, OR ASSISTING OTHERS IN ANTI CIVIL ACTIVITIES IS PROHIBITED.",
                 Verdicts = CombineRegulationSL2V
             },
             new Regulation()
             {
                 Level = 2,
                 Code = "2.3",
-                Name = "ANTI UNIVERSAL UNION RHETORIC",
-                Description = "UNDERMINING THE UNIVERSAL UNION, DEFYING THE UNIVERSAL UNION, OR ASSISTING OTHERS IN ANTI CIVIL ACTIVITIES IS PROHIBITED",
-                Verdicts = CombineRegulationSL2V
-            },
-            new Regulation()
-            {
-                Level = 2,
-                Code = "2.4",
                 Name = "OBSTRUCTING SOCIOSTABILITY",
-                Description = "INTERFERING WITH THE DUTIES OF RANK MEMBERS OF COMMAND, HIGH COMMAND, AND OVERSIGHT ECHELONS IS PROHIBITED",
+                Description = "INTERFERING WITH THE DUTIES OF RANK MEMBERS OF COMMAND, HIGH COMMAND, AND OVERSIGHT ECHELONS IS PROHIBITED.",
                 Verdicts = CombineRegulationSL2V
             },
             // Level 3
@@ -158,8 +157,8 @@ namespace City17RobloxAutomation
             {
                 Level = 3,
                 Code = "3.1",
-                Name = "UNAUTHORIZED HOMICIDE",
-                Description = "CRIMINALLY CAUSING THE DEATH OF OTHERS IS PROHIBITED",
+                Name = "UNAUTHORIZED VIOLENCE",
+                Description = "ATTEMPTING OR SUCCESSFULLY ASSAULTING/(DIRECLY/INDIRECTLY) CAUSING THE DEATH OF CITIZENS CITIZENS WITHOUT PROBABLE CAUSE, THIS DOES NOT APPLY TO CROSSFIRE.",
                 Verdicts = CombineRegulationSL3V
             },
             new Regulation()
@@ -167,7 +166,7 @@ namespace City17RobloxAutomation
                 Level = 3,
                 Code = "3.2",
                 Name = "DISRESPECTING A SUPERIOR RANK MEMBER",
-                Description = "QUESTIONING, INSULTING, OR SLANDERING A SUPERIOR RANK MEMBER IS PROHIBITED",
+                Description = "QUESTIONING, INSULTING, OR SLANDERING A SUPERIOR RANK MEMBER IS PROHIBITED.",
                 Verdicts = CombineRegulationSL3V
             },
             new Regulation()
@@ -175,7 +174,7 @@ namespace City17RobloxAutomation
                 Level = 3,
                 Code = "3.3",
                 Name = "EVADING SENTENCING",
-                Description = "INTENTIONALLY EVADING A VERDICT BY SWITCHING GAME TEAM, DECEIVING, FLEEING, HIDING, OR RESPAWNING IS PROHIBITED",
+                Description = "INTENTIONALLY EVADING A VERDICT BY SWITCHING GAME TEAM, DECEIVING, FLEEING, HIDING, OR RESPAWNING IS PROHIBITED.",
                 Verdicts = CombineRegulationSL3V
             }
         };
@@ -187,12 +186,12 @@ namespace City17RobloxAutomation
             new Verdict()
             {
                 Level = 1,
-                Name = "FIRST WARNING"
+                Name = "ONE CYCLE OF RE-EDUCATION"
             },
             new Verdict()
             {
                 Level = 2,
-                Name = "1 CYCLE OF RE-EDUCATION"
+                Name = "TWO CYCLES OF RE-EDUCATION"
             },
             new Verdict()
             {
@@ -206,7 +205,7 @@ namespace City17RobloxAutomation
             new Verdict()
             {
                 Level = 1,
-                Name = "3 CYCLES OF RE-EDUCATION"
+                Name = "THREE CYCLES OF RE-EDUCATION"
             },
             new Verdict()
             {
@@ -231,16 +230,16 @@ namespace City17RobloxAutomation
             {
                 Level = 1,
                 Code = "1.1",
-                Name = "CLIMBING LADDERS AND FENCES",
-                Description = "ACCESSING ANY LADDERS AND CLIMBING OVER FENCES IS PROHIBITED",
+                Name = "MOVEMENT TRANSGRESSION",
+                Description = "FOUND STANDING ON OBJECTS TO GAIN ELEVATION ADVANTAGE AND CLIMBING ON LADDERS, STANDING ON FENCES.",
                 Verdicts = CivilianRegulationSL1V
             },
             new Regulation()
             {
                 Level = 1,
                 Code = "1.2",
-                Name = "CAUSING A DISTURBANCE TO OTHERS",
-                Description = "HARASSING, INSULTING, OR SLANDERING OTHERS IS PROHIBITED",
+                Name = "CIVIC DISUNITY",
+                Description = "VERBALLY HARASSING, INSULTING, OR SLANDERING OTHERS IS PROHIBITED.",
                 Verdicts = CivilianRegulationSL1V
             },
             new Regulation()
@@ -248,15 +247,15 @@ namespace City17RobloxAutomation
                 Level = 1,
                 Code = "1.3",
                 Name = "LOITERING",
-                Description = "BEING IN THE PROXIMITY OF AN AREA THAT IS RESTRICTED IS PROHIBITED",
+                Description = "BEING IN THE PROXIMITY OF AN AREA THAT IS RESTRICTED IS PROHIBITED.",
                 Verdicts = CivilianRegulationSL1V
             },
             new Regulation()
             {
                 Level = 1,
                 Code = "1.4",
-                Name = "YELLING",
-                Description = "SENDING A MESSAGE WITH A MAJORITY OF LETTERS CAPITALIZED IS PROHIBITED",
+                Name = "VERBAL INDISCRETION",
+                Description = "SENDING A MESSAGE WITH A MAJORITY OF LETTERS CAPITALIZED IS PROHIBITED.",
                 Verdicts = CivilianRegulationSL1V
             },
             new Regulation()
@@ -264,15 +263,7 @@ namespace City17RobloxAutomation
                 Level = 1,
                 Code = "1.5",
                 Name = "UNCIVIL BEHAVIOR",
-                Description = "THROWING OBJECTS AT OTHERS, PUSHING OTHERS, OR HAVING PHYSICAL CONTACT WITH OTHERS IS PROHIBITED",
-                Verdicts = CivilianRegulationSL1V
-            },
-            new Regulation()
-            {
-                Level = 1,
-                Code = "1.6",
-                Name = "MISINFORMING",
-                Description = "FALSELY ACCUSING OTHERS, MISINFORMING LOCAL AUTHORITIES, AND DISSIPATING THEIR TIME AND RESOURCES IS PROHIBITED",
+                Description = "THROWING OBJECTS AT OTHERS, PUSHING OTHERS, OR HAVING PHYSICAL CONTACT WITH OTHERS IS PROHIBITED, REPEATEDLY USING VOICELINES OR TRESPASSING IN SOMEONE'S RESIDENCE.",
                 Verdicts = CivilianRegulationSL1V
             },
             // LEVEL 2
@@ -280,8 +271,8 @@ namespace City17RobloxAutomation
             {
                 Level = 2,
                 Code = "2.1",
-                Name = "ATTEMPTING TO SOCIOCIDE",
-                Description = "PROCLAIMING INTENT TO INCREASE PROBABILITY OF SOCIO DESTABILIZATION, OR INTENT TO CAUSE PHYSICAL HARM TO OTHERS IS PROHIBITED",
+                Name = "ANTI-CIVIL RHETORIC",
+                Description = "DECLARING INTENT TO INCREASE THE PROBABILITY OF SOCIO DESTABILISATION, INTENDING TO CAUSE PHYSICAL HARM TO OTHERS, UNDERMINING OR GLORIFYING FACTIONS OTHERS THAN THOSE AFFILIATED WITH THE UNIVERSAL UNION.",
                 Verdicts = CivilianRegulationSL2V
             },
             new Regulation()
@@ -289,7 +280,7 @@ namespace City17RobloxAutomation
                 Level = 2,
                 Code = "2.2",
                 Name = "COMMUNICATING IN A PROHIBITED LANGUAGE",
-                Description = "COMMUNICATING IN ANY LANGUAGE EXCEPT THE 'ENGLISH' LANGUAGE IS PROHIBITED",
+                Description = "COMMUNICATING IN ANY LANGUAGE EXCEPT THE 'ENGLISH' LANGUAGE IS PROHIBITED.",
                 Verdicts = CivilianRegulationSL2V
             },
             new Regulation()
@@ -297,31 +288,31 @@ namespace City17RobloxAutomation
                 Level = 2,
                 Code = "2.3",
                 Name = "OBSTRUCTING LOCAL AUTHORITIES",
-                Description = "INTERFERING WITH THE DUTIES OF LOCAL AUTHORITIES",
+                Description = "WILLFULLY OBSTRUCTING LOCAL AUTHORITIES IN THE EXECUTION OF THEIR DUTIES.",
                 Verdicts = CivilianRegulationSL2V
             },
             new Regulation()
             {
                 Level = 2,
                 Code = "2.4",
-                Name = "SURRENDERING CARRIED CONTRABAND TO LOCAL AUTHORITIES",
-                Description = "CARRYING CONTRABAND ON YOUR PERSON IS PROHIBITED. SURRENDERING CONTRABAND WITHOUT RESISTANCE, BY DISCARDING, DROPPING, OR BEING SUBJECT TO A SEARCH RESULTS IN A LEVEL 2 VIOLATION RATHER THAN A LEVEL 3 VIOLATION",
+                Name = "POSSESSION OF CONTRABAND",
+                Description = "POSSESING CONTRABAND DURING A FRISK, WITHOUT SURRENDERING IT TO A LOCAL PROTECTION UNIT. CITIZENS THAT INDEPENDENTLY SURRENDER OR VOLUNTEER FOR A FRISK ARE EXEMPT FROM LIABILITY UNDER THIS ARTICLE.",
                 Verdicts = CivilianRegulationSL2V
             },
             new Regulation()
             {
                 Level = 2,
                 Code = "2.5",
-                Name = "ANTI UNIVERSAL UNION RHETORIC",
-                Description = "UNDERMINING THE UNIVERSAL UNION, PERSUADING OTHERS TO DEFY THE UNIVERSAL UNION, OR ASSISTING OTHERS IN ANTI CIVIL ACTIVITIES IS PROHIBITED",
+                Name = "MISLEADING LOCAL AUTHORITIES",
+                Description = "MAKING FALSE REPORTS CONCERNING SOCIOSTABILITY, MISINFORMING LOCAL AUTHORITIES, OR WASTING THEIR TIME AND RESOURCES.",
                 Verdicts = CivilianRegulationSL2V
             },
             new Regulation()
             {
                 Level = 2,
                 Code = "2.6",
-                Name = "INSULTING LOCAL AUTHORITIES",
-                Description = "DISRESPECTING LOCAL AUTHORITIES BY VERBALLY INSULTING THEM",
+                Name = "DISRESPECTING LOCAL AUTHORITIES",
+                Description = "VERBALLY HARASSING, QUESTIONING, OR SLANDERING LOCAL AUTHORITIES.",
                 Verdicts = CivilianRegulationSL2V
             },
             // LEVEL 3
@@ -329,40 +320,47 @@ namespace City17RobloxAutomation
             {
                 Level = 3,
                 Code = "3.1",
-                Name = "ENGAGING IN DISOBEDIENCE WITH LOCAL AUTHORITIES",
-                Description = "REFUSING, IGNORING, OR NOT IMMEDIATELY RESPONDING TO INSTRUCTIONS GIVEN BY LOCAL AUTHORITIES IS PROHIBITED",
+                Name = "DISOBEDIENCE WITH LOCAL AUTHORITIES",
+                Description = "REFUSING, IGNORING, OR NOT IMMEDIATELY RESPONDING TO INSTRUCTIONS GIVEN BY LOCAL AUTHORITIES IMMIDIATELY IS PROHIBITED.",
                 Verdicts = CivilianRegulationSL3V
             },
             new Regulation()
             {
                 Level = 3,
                 Code = "3.2",
-                Name = "FAILING TO COMPLY WITH SOCIO STATUS PROTOCOL",
-                Description = "REFUSING, IGNORING, OR NOT IMMEDIATELY RESPONDING TO INSTRUCTIONS CONCERNING SOCIOSTABILITY IS PROHIBITED",
+                Name = "RESISTING PROESECUTION",
+                Description = "INTENTIONALLY EVADING RE-EDUCATION OR STANDARD FRISKING PROCEDURE BY FLEEING, HIDING, OR MOVING WHILE BEING ADMINISTERED A VERDICT OR BEING SUBJECT TO A SEARCH.",
                 Verdicts = CivilianRegulationSL3V
             },
             new Regulation()
             {
                 Level = 3,
                 Code = "3.3",
-                Name = "USAGE OF CONTRABAND",
-                Description = "USING CONTRABAND TO HARM OWN OR ANOTHER PERSON IS PROHIBITED",
-                Verdicts = CivilianRegulationSL3V
+                Name = "MALCOMPLIANCE WITH SOCIOSTATUS PROTOCOL",
+                Description = "REFUSING, IGNORING, OR FAILING TO IMMIDIATELY RESPOND TO INSTRUCTIONS CONCERNING SOCIOSTABILITY"
             },
             new Regulation()
             {
                 Level = 3,
                 Code = "3.4",
-                Name = "TRESPASSING ON RESTRICTED TERRITORY",
-                Description = "ACCESSING ANY RESTRICTED REGION IS PROHIBITED",
+                Name = "USAGE OF CONTRABAND",
+                Description = "USING OR EQUIPPING ILLEGALLY ACQUIRED CONTRABAND ITEMS.",
                 Verdicts = CivilianRegulationSL3V
             },
             new Regulation()
             {
                 Level = 3,
                 Code = "3.5",
+                Name = "CRIMINAL TRESPASS",
+                Description = "ACCESSING ANY RESTRICTED REGION IS PROHIBITED.",
+                Verdicts = CivilianRegulationSL3V
+            },
+            new Regulation()
+            {
+                Level = 3,
+                Code = "3.6",
                 Name = "COMMITTING THEFT",
-                Description = "STEALING ANY PROPERTY IS PROHIBITED",
+                Description = "STEALING ANY PROPERTY (INCLUDING TOKENS FROM CASH REGISTERS) IS PROHIBITED.",
                 Verdicts = CivilianRegulationSL3V
             }
         };
